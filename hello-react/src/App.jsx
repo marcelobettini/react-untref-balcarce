@@ -1,20 +1,18 @@
-import SubTitle from "./components/SubTitle";
-import Title from "./components/Title";
-
+import CharacterCard from "./components/CharacterCard";
+import { results as characters } from "./data/data.json";
+import './App.css';
 function App() {
-  const title = "Hola Mundo desde React";
-  const num_a = 9;
-  const num_b = 3;
+
+
   return (
     <>
-      <h1>Acá va la variable <code>title</code>: {title.toUpperCase()}</h1>
-      <p style={{ fontSize: '24px' }}>Resultado de sumar {num_a} + {num_b} = {num_a + num_b}</p>
-
-      <header>
-
-        <SubTitle />
-        <Title />
-      </header>
+      <h1>Lista de usuarios</h1>
+      <section className="main-container">
+        {characters.map((character) => (
+          // <p>{character.name}</p>
+          <CharacterCard character={character} key={character.id} />
+        ))}
+      </section>
     </>
   );
 }
