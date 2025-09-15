@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import Counter from './component/Counter';
 import './App.css';
 
 function App() {
-  let [count, setCount] = useState(10);
-  console.count("Se monta App");
-  const handleAdd = () => setCount(count + 1);
+
+
   return (
     <>
       <h1>Eventos en React</h1>
 
-      <h3>{count}</h3>
-      <button onClick={handleAdd}>Suma 1</button>
+      <Counter />
+      <hr />
+      <Counter initCount={10} />
+      <hr />
+      <Counter initCount={-4} />
     </>
   );
 }
