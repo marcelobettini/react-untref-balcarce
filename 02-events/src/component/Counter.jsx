@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+
 import './Counter.css';
 function Counter({ initCount = 0 }) {
+
     const [count, setCount] = useState(initCount);
     const [userNumber, setUserNumber] = useState(0);
 
@@ -12,16 +16,16 @@ function Counter({ initCount = 0 }) {
         setCount((curr) => curr + userNumber);
     }, 5000);
     return (
-        <>
+        <Container>
             <h3>{count}</h3>
-            <button onClick={handleAdd}>Suma 1</button>
-            <button onClick={handleSub}>Resta 1</button>
-            <button onClick={handleRst}>Reinicia</button>
+            <Button onClick={handleAdd}>Suma 1</Button>
+            <Button onClick={handleSub}>Resta 1</Button>
+            <Button onClick={handleRst}>Reinicia</Button>
             <br />
-            <button onClick={handleAddN}>Sumar N</button>
+            <Button onClick={handleAddN}>Sumar N</Button>
             <input type="number" max="999" required value={userNumber} onChange={(e) => setUserNumber(Number(e.target.value))} />
-            <button onClick={handleAddAsync}>Sumar Async</button>
-        </>
+            <Button variant='outline-danger' onClick={handleAddAsync}>Add Async</Button>
+        </Container>
     );
 }
 export default Counter;

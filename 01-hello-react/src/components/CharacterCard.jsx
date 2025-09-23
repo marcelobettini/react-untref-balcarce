@@ -11,6 +11,7 @@ function CharacterCard({ character }) {
                 <li>{gender}</li>
                 <li>{status}</li>
                 <li>{species}</li>
+
             </ul>
         </article>
 
