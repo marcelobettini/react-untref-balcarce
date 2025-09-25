@@ -1,9 +1,13 @@
-import ApiCall from "./components/ApiCall";
+import CharacterList from "./character/CharacterList";
+import EpisodeList from "./episode/EpisodeList";
+import LocationList from "./location/LocationList";
 
 
 function App() {
   return (
-    <ApiCall />
+    // <LocationList />
+    // <EpisodeList />
+    <CharacterList />
   );
 }
 
