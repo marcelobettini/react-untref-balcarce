@@ -7,15 +7,15 @@ import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/col';
 import CharacterCard from './CharacterCard';
 import useGetData from '../hooks/useGetData';
+import Search from '../components/Search';
 
 
 export default function CharacterList() {
     const [endpoint, setEndpoint] = useState("character");
     const { data, loading, error } = useGetData(endpoint);
     let url;
-    if (data.info) {
-        url = new URL(data.info.next);
-        console.log(url);
+    if (data?.info?.next) {
+        url = new URL(data.info?.next);
     }
 
     const handleNext = () => {
@@ -27,6 +27,7 @@ export default function CharacterList() {
 
     return (
         <Container>
+
             <Row >
                 <header className='d-flex  flex-column align-items-center'>
                     <h1 className='text-center'>Characters</h1>
@@ -35,6 +36,9 @@ export default function CharacterList() {
                         <Button onClick={handleNext}>Next</Button>
                     </ButtonGroup>
                 </header>
+                <nav>
+                    <Search setEndpoint={setEndpoint} />
+                </nav>
             </Row>
             <section className='grid-container'>
 
