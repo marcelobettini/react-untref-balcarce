@@ -1,8 +1,11 @@
 import Button from "react-bootstrap/button";
 import Card from "react-bootstrap/card";
 import Col from "react-bootstrap/col";
+import { useContext } from "react";
+import { CartContext } from "../../App";
 
-export default function ProductItem({ product, setCart }) {
+export default function ProductItem({ product }) {
+    const { setCart } = useContext(CartContext);
     function handleCart() {
         setCart((prev) => ([...prev, product]));
     }

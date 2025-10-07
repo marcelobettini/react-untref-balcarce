@@ -1,5 +1,5 @@
 import ProductItem from "../components/ProductItem";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 export default function ProductList({ products, setCart }) {
     return (
