@@ -1,4 +1,4 @@
-import ProductItem from "../components/ProductItem";
+import ProductItem from "../../products/components/ProductItem";
 import { Row } from "react-bootstrap";
 
 export default function ProductList({ products, setCart }) {
