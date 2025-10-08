@@ -15,6 +15,7 @@ function App() {
 
       <Container>
         <CartSummary />
+
         {loading ? <p>Carganding...</p>
           :
           error ? <p>{error.message}</p>
