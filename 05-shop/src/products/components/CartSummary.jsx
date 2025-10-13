@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import * as Icon from "react-bootstrap-icons";
 
 import { CartContext } from "../../cart/CartContext";
+import { getTotalCartPrice } from "../../utils/getTotalCartPrice";
 
 export default function CartSummary() {
     const { cart } = useContext(CartContext);
@@ -16,7 +17,7 @@ export default function CartSummary() {
                 <article style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center" }}>
                     <Link to="/cart" className="text-decoration-none">
                         <Icon.CartCheckFill />
-                        <small> {cart.length}</small>
+                        <small> {getTotalCartPrice(cart)}</small>
                     </Link>
                 </article>
             }
