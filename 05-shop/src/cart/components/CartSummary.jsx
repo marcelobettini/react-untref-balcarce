@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router";
 import * as Icon from "react-bootstrap-icons";
 
-import { CartContext } from "../../cart/CartContext";
+import { CartContext } from "../CartContext";
 import { getTotalCartPrice } from "../../utils/getTotalCartPrice";
 
 export default function CartSummary() {

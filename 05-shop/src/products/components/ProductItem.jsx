@@ -5,8 +5,13 @@ import { useContext } from "react";
 import { CartContext } from "../../cart/CartContext";
 
 export default function ProductItem({ product }) {
-    const { setCart } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
+    const handleAddProduct = () => {
 
+        setCart((prevCart) => ([...prevCart, product]));
+
+
+    };
 
     return (
         <Col xs={12} sm={6} md={4}>
@@ -16,7 +21,7 @@ export default function ProductItem({ product }) {
                 </Card.Header>
                 <Card.Body>
                     <Card.Img src={product.image} alt={product.title}></Card.Img>
-                    <Button variant="outline-primary" className="mt-3" >I want it!!!</Button>
+                    <Button variant="outline-primary" className="mt-3" onClick={handleAddProduct}>I want it!!!</Button>
                     {/* navegar con este botón en vez del link como wrapper */}
                 </Card.Body>
             </Card>

@@ -1,17 +1,17 @@
 
-import { Link } from "react-router";
-import ProductItem from "../../products/components/ProductItem";
 import { Row } from "react-bootstrap";
+import useGetData from "../hooks/useGetData";
+import ProductItem from "../components/ProductItem";
 
-export default function ProductList({ products, setCart }) {
+export default function ProductList() {
+
+    const { data, isLoading } = useGetData('/products');
+    if (isLoading) return <p>Aguantá...</p>;
 
     return (
         <Row as={"section"}>
-            {products?.map((p) => (
-                <Link to={`product/${p.id}`} className="text-decoration-none" key={p.id}>
-                    <ProductItem product={p} setCart={setCart} />
-                </Link>
-            ))}
+            <h1>Listado de Productos</h1>
+            {data.map(p => <ProductItem key={p.id} product={p} />)}
         </Row>
     );
 }
