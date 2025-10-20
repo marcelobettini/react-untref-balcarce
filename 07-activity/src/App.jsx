@@ -1,24 +1,31 @@
 import { useState, Activity } from 'react';
-import Sidebar from './components/Sidebar';
+import TabButton from './components/TabButton';
 
 import './App.css';
+import Home from './components/Home';
+import Contact from './components/Contact';
 
 function App() {
-  const [isShowingSidebar, setIsShowingSidebar] = useState(false);
+  const [activeTab, setActiveTab] = useState('home');
   return (
-    <section className='section'>
-      <Activity mode={isShowingSidebar ? 'visible' : 'hidden'}>
-        <Sidebar />
-      </Activity>
-      <main>
+    <>
+      <nav style={{ display: 'flex' }}>
+        <TabButton isActive={activeTab === 'home'}
+          onClick={() => setActiveTab("home")}>
+          HOME
+        </TabButton>
+        <TabButton isActive={activeTab === 'contact'}
+          onClick={() => setActiveTab("contact")}>
+          CONTACT
+        </TabButton>
+      </nav>
+      <hr />
 
-        <button onClick={() => setIsShowingSidebar(!isShowingSidebar)}>
-          {isShowingSidebar ? 'Hide Sidebar' : 'Show Sidebar'}
-        </button>
-        <h1>Main content</h1>
-      </main>
-
-    </section>
+      <>
+        {activeTab === 'home' && <Home />}
+        {activeTab === 'contact' && <Contact />}
+      </>
+    </>
   );
 }
 

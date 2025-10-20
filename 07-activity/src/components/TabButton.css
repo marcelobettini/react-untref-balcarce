@@ -1,0 +1,11 @@
+button {
+    margin: 1rem;
+    cursor: pointer;
+    max-width: 120px;
+
+}
+
+.active {
+    color: tomato;
+    background-color: rgb(198, 198, 198);
+}
