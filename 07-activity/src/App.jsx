@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState, Activity } from 'react';
 import Sidebar from './components/Sidebar';
 
 import './App.css';
 
 function App() {
-  const [isShowingSidebar, setIsShowingSidebar] = useState(true);
+  const [isShowingSidebar, setIsShowingSidebar] = useState(false);
   return (
     <section className='section'>
-      {isShowingSidebar && <Sidebar />}
+      <Activity mode={isShowingSidebar ? 'visible' : 'hidden'}>
+        <Sidebar />
+      </Activity>
       <main>
 
         <button onClick={() => setIsShowingSidebar(!isShowingSidebar)}>
