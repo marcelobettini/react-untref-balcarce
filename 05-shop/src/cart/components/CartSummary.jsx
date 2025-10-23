@@ -13,7 +13,6 @@ export default function CartSummary() {
         <div>
             {!cart.length ?
                 <Icon.Cart2 /> :
-
                 <article style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center" }}>
                     <Link to="/cart" className="text-decoration-none">
                         <Icon.CartCheckFill />
