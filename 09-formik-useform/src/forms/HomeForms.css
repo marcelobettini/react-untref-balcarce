@@ -1,0 +1,20 @@
+.hero-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+
+    & img {
+        width: 400px;
+        box-shadow: 2px 2px 5px rgba(215, 206, 207, .5);
+        border-radius: 2.5%;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 8px 8px 10px rgba(215, 206, 207, .5);
+
+        }
+    }
+}

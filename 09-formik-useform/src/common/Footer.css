@@ -1,0 +1,11 @@
+.footer {
+    display: grid;
+    height: 120px;
+    text-align: center;
+
+
+}
+
+a {
+    display: inline;
+}

@@ -1,0 +1,22 @@
+.header {
+    text-align: center;
+    height: 100px;
+    background-color: rgb(29, 28, 28);
+
+    & nav {
+        display: flex;
+        justify-content: center;
+        column-gap: 1rem;
+        margin-top: 1rem;
+
+        & a {
+            text-decoration: none;
+            color: whitesmoke;
+
+            &.active-link {
+                color: rgb(210, 136, 210);
+            }
+        }
+    }
+
+}
