@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import MainLayout from './common/MainLayout';
 import HomeForms from './forms/HomeForms';
-import Formik from './forms/Formik';
-import UseForm from './forms/UseForm';
+import FormFormik from './forms/FormFormik';
+import FormUseForm from './forms/FormUseForm';
 
 function App() {
 
@@ -12,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeForms />} />
-          <Route path='forms/formik' element={<Formik />} />
-          <Route path='forms/useform' element={<UseForm />} />
+          <Route path='forms/formik' element={<FormFormik />} />
+          <Route path='forms/useform' element={<FormUseForm />} />
         </Route>
 
       </Routes>

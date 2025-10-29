@@ -1,8 +1,8 @@
-function UseForm() {
+function FormUseForm() {
     return (
         <div>
             useForm Form
         </div>
     );
 }
-export default UseForm;
+export default FormUseForm;
